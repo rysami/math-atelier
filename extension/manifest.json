@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "数学精读 · Math Atelier",
+  "version": "4.9.2",
+  "description": "统一侧栏管理课程、知识点目录、AI回复定位与问答，网页保留课程正文。",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "unlimitedStorage",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "web-core.js",
+        "prompts.js",
+        "math-tags.js",
+        "navigation-state.js",
+        "content.js",
+        "flow-page.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "打开数学精读"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src 'self' blob:; connect-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "typography.css"
+      ],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ]
+    }
+  ]
+}

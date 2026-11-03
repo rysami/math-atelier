@@ -1,0 +1,18 @@
+# faster-whisper 本地部署依赖
+# 注意：ctranslate2 必须 >=4.7.0 —— 4.6.3 之前的版本在 RTX 50 系 (Blackwell sm_120)
+# 上跑 int8 会报 CUBLAS_STATUS_NOT_SUPPORTED。
+faster-whisper==1.2.1
+ctranslate2==4.8.2
+
+# CUDA 运行时 (Windows 上 CTranslate2 需要这些 DLL)
+nvidia-cublas-cu12==12.9.2.10
+nvidia-cudnn-cu12==9.26.0.51
+nvidia-cuda-nvrtc-cu12==12.9.86
+
+# 本地 OpenAI 兼容 API 服务
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+python-multipart==0.0.32
+
+# 网页 GUI
+gradio==6.27.0

@@ -1,0 +1,3 @@
+/* Visual spacing only: never rewrite source text, math or navigation anchors. */
+[data-message-author-role="assistant"] { text-autospace: normal; }
+[data-message-author-role="assistant"] :is(pre,code,math,.katex,.katex *) { text-autospace: no-autospace; }

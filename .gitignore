@@ -1,0 +1,15 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env*
+*.log
+course_glossaries.json
+*.wav
+*.mp3
+*.m4a
+*.mp4
+*.flac
+*.srt
+*.vtt
+out*/
